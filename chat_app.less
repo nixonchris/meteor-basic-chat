@@ -1,0 +1,59 @@
+/* CSS declarations go here */
+
+.container {
+    margin-top: 2em;
+}
+.well {
+    height: 15em;
+    overflow: auto;
+}
+#settings {
+    float: right;
+}
+.username {
+    float: left;
+    width: 60px;
+    margin-right: -60px;
+    .label {
+        text-align: right;
+        float: right;
+
+    }
+}
+.message {
+    overflow: hidden;
+    margin-bottom: 1em;
+}
+.message-content {
+    float: left;
+    margin-left: 70px;
+}
+textarea {
+    width: 80%;
+    float: left;
+}
+#send {
+    width: 15%;
+    float: right;
+}
+
+#nameform {
+    text-align: center;
+}
+#username {
+    height: 27px;
+    font-size: 15px;
+    vertical-align: top;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #settings {
+        float: none;
+        margin-bottom: .7em;
+    }
+}

@@ -1,0 +1,72 @@
+<head>
+  <title>Meteor Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    {{> modal}}
+    <div class="container">
+        <div class="row-fluid">
+            {{> header}}
+        </div>
+        <div class="row-fluid">
+            {{> chatwindow}}
+        </div>
+    </div>
+</body>
+
+<template name="header">
+    <div class="span6">
+        <h1>Meteor Chat</h1>
+    </div>
+    <div class="span2">
+        <div id="settings" class="btn-group">
+            <button class="btn btn-small dropdown-toggle" data-toggle="dropdown"><i class="icon-cog"></i> Settings <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a class="clear-history" href="#">Clear History</a></li>
+            </ul>
+        </div>
+    </div>
+</template>
+
+<template name="chatwindow">
+    <div class="span8">
+        <div class="well">
+            {{#each messages}}
+                {{> message}}
+            {{/each}}
+        </div>
+        <form id="chatform">
+            <textarea rows="2"></textarea>
+            <input id="send" class="btn btn-primary" type="submit" value="Send">
+        </form>
+    </div>
+</template>
+
+<template name="message">
+    <div class="message">
+        <div class="username">
+            <span class="label {{labelColor}}">{{username}}}:</span>
+        </div>
+        <div class="message-content">{{messageContent}}</div>
+    </div>
+</template>
+
+<template name="modal">
+    {{#if noName}}
+    <div class="modal">
+        <div class="modal-header">
+            <h3>Hello! Enter your name to begin...</h3>
+        </div>
+        <div class="modal-body">
+            <form id="nameform">
+                <input id="username" type="text" placeholder="Your Name" maxlength="8">
+                <input class="btn btn-primary btn-large" type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>
+    <div class="modal-backdrop fade in"></div>
+    {{/if}}
+</template>
