@@ -7,15 +7,11 @@
 
     // client
 
-    function scrollToBottom() {
-        $(".well").prop({ scrollTop: $(".well").prop("scrollHeight") });
-    }
-
     if (Meteor.is_client) {
-
-        Meteor.startup(function () {
-
-        });
+        
+        function scrollToBottom() {
+            $(".well").prop({ scrollTop: $(".well").prop("scrollHeight") });
+        }
 
         Template.chatwindow.messages = function () {
             return Messages.find();
@@ -95,14 +91,6 @@
             }
         };
 
-    }
-
-    // server
-
-    if (Meteor.is_server) {
-        Meteor.startup(function () {
-            // code to run on server at startup
-        });
     }
 
 }());
